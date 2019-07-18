@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+     <!--1.给类起别名 2.连接数据库 3.加载mapper文件4 加载分页插件-->
+
+     <typeAliases>
+          <package name="com.qf.bean"/>
+     </typeAliases>
+     <plugins>
+          <plugin interceptor="com.github.pagehelper.PageHelper">
+              <property name="dialect" value="mysql"/>
+          </plugin>
+     </plugins>
+</configuration>
