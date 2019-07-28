@@ -2,7 +2,8 @@ package com.qf.service;
 
 import com.qf.bean.Users;
 
-public interface UsersServive {
+public interface UsersService {
 
     Users findByUsername(String username);
+
 }

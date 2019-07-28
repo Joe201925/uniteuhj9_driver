@@ -2,7 +2,8 @@ package com.qf.myrealm;
 
 import com.alibaba.druid.sql.visitor.functions.Char;
 import com.qf.bean.Users;
-import com.qf.service.UsersServive;
+
+import com.qf.service.UsersService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -17,7 +18,7 @@ import javax.annotation.Resource;
 public class RealmA extends AuthorizingRealm {
 
     @Resource
-    private UsersServive usersServive;
+    private UsersService usersService;
 
     /**
      * 认证用户登录
@@ -34,7 +35,7 @@ public class RealmA extends AuthorizingRealm {
         String  username = (String) authenticationToken.getPrincipal();
 
         //2.调用service层方法进行查询
-        Users user = usersServive.findByUsername(username);
+        Users user = usersService.findByUsername(username);
        if (user==null){
            return null;
        }

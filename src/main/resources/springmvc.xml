@@ -23,17 +23,14 @@ http://www.springframework.org/schema/mvc
     <context:component-scan base-package="com.qf.web"></context:component-scan>
     <!--2.创建视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/"/>
-        <property name="suffix" value=".jsp"/>
+        <property name="suffix" value=".jsp"></property>
+        <property name="prefix" value="/"></property>
     </bean>
-
     <!--6.处理json-->
     <mvc:annotation-driven></mvc:annotation-driven>
-    <!--7.事务管理-->
-    <bean id="mytx" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="db"/>
-    </bean>
-    <tx:annotation-driven transaction-manager="mytx"></tx:annotation-driven>
+
     <!--8.处理静态资源-->
     <mvc:default-servlet-handler></mvc:default-servlet-handler>
+
+
 </beans>

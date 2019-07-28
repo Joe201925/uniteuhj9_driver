@@ -2,13 +2,12 @@ package com.qf.service.impl;
 
 import com.qf.bean.Users;
 import com.qf.dao.UsersMapper;
-import com.qf.service.UsersServive;
+import com.qf.service.UsersService;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 
 @Service
-public class UsersServiveImpl implements UsersServive {
+public class UsersServiceImpl implements UsersService {
 
     @Resource
     private UsersMapper usersMapper;
